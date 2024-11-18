@@ -2,6 +2,18 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
+//middleware
+app.use(express.json());
+app.use((req,res, next) =>{
+    console.log(`This Works First`); //middlewaare for logging,auth,parsing,etc
+    //next();
+});
+
+app.get(`/`, (req,res) =>{
+    console.log("This works Second"); //route handler
+}
+);
+
 //in the browser http://localhost:3000/user/23
 
 app.get("/user/:id", (req, res)=>{
