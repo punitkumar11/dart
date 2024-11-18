@@ -6,7 +6,7 @@ const PORT = 3000;
 
 app.get("/user/:id", (req, res)=>{
     const userId = req.params.id;
-    res.send(`User id is`${userId});
+    res.send(`User id is ${userId}`);
 });
 
 app.listen(PORT, () => {
