@@ -9,8 +9,11 @@ app.use((req,res, next) =>{
     //next();
 });
 
-app.get(`/`, (req,res) =>{
-    console.log("This works Second"); //route handler
+
+app.post(`/create`, (req,res) =>{
+    const userData = req.body;
+    res.send(`user data received : ${JSON.stringify(userData)}`);
+    
 }
 );
 
